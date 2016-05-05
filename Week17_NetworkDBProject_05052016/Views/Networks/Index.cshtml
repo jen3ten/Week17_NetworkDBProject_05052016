@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Week17_NetworkDBProject_05052016.Models.Network>
+
+@{
+    ViewBag.Title = "Networks";
+}
+
+<h2>List of Networks</h2>
+
+<!-- Users will not add Network data
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+-->
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Logo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Logo)
+        </td>
+        <!-- Users will not Edit, Delete or view Details of Networks
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NetworkID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NetworkID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NetworkID })
+        </td>
+        -->
+    </tr>
+}
+
+</table>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c47ff2959a4a4f0e94fb50fa502bcb77" Name="Diagram1">
+        <EntityTypeShape EntityType="TVNetworkShowsDBModel.Network" Width="1.5" PointX="0.875" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="TVNetworkShowsDBModel.Show" Width="1.5" PointX="4.625" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="TVNetworkShowsDBModel.FK__Shows__NetworkID__1273C1CD" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

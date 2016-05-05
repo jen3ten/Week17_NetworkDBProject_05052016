@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TVNetworkShowsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Networks">
+    <Key>
+      <PropertyRef Name="NetworkID" />
+    </Key>
+    <Property Name="NetworkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Logo" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Shows">
+    <Key>
+      <PropertyRef Name="ShowID" />
+    </Key>
+    <Property Name="ShowID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NetworkID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Genre" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Rating" Type="decimal" Precision="2" Scale="1" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="250" />
+    <Property Name="Website" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <Association Name="FK__Shows__NetworkID__1273C1CD">
+    <End Role="Networks" Type="Self.Networks" Multiplicity="1" />
+    <End Role="Shows" Type="Self.Shows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Networks">
+        <PropertyRef Name="NetworkID" />
+      </Principal>
+      <Dependent Role="Shows">
+        <PropertyRef Name="NetworkID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TVNetworkShowsDBModelStoreContainer">
+    <EntitySet Name="Networks" EntityType="Self.Networks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shows" EntityType="Self.Shows" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Shows__NetworkID__1273C1CD" Association="Self.FK__Shows__NetworkID__1273C1CD">
+      <End Role="Networks" EntitySet="Networks" />
+      <End Role="Shows" EntitySet="Shows" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
