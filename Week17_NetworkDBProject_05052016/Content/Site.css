@@ -27,3 +27,16 @@ textarea {
 .header-float-right{
     float: right;
 }
+
+.img-thumbnail{
+    max-height:100px;
+    max-width:100px;
+}
+
+.home-background{  /* sets the background image for the home page */
+    background:transparent url("http://prod.ninu.s3.amazonaws.com/encoded_files/303180-full_poster/frame_0000.jpg") no-repeat;
+    height:600px;
+    background-position:center;
+    background-size:contain;
+}
+
