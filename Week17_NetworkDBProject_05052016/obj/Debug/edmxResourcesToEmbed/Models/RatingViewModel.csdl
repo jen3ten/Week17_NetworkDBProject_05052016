@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TVNetworkShowsDBViews" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="vwRatings4OrLess">
+    <Key>
+      <PropertyRef Name="ShowID" />
+      <PropertyRef Name="NetworkID" />
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="Genre" />
+    </Key>
+    <Property Name="ShowID" Type="Int32" Nullable="false" />
+    <Property Name="NetworkID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Genre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rating" Type="Decimal" Precision="2" Scale="1" />
+    <Property Name="Photo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vwRatingsAbove4">
+    <Key>
+      <PropertyRef Name="ShowID" />
+      <PropertyRef Name="NetworkID" />
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="Genre" />
+    </Key>
+    <Property Name="ShowID" Type="Int32" Nullable="false" />
+    <Property Name="NetworkID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Genre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rating" Type="Decimal" Precision="2" Scale="1" />
+    <Property Name="Photo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="TVNetworkShowsDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="vwRatings4OrLess" EntityType="Self.vwRatings4OrLess" />
+    <EntitySet Name="vwRatingsAbove4" EntityType="Self.vwRatingsAbove4" />
+  </EntityContainer>
+</Schema>

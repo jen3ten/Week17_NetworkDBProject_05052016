@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TVNetworkShowsDBViews.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TVNetworkShowsDB.dbo.vwRatings4OrLess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwRatings4OrLess">
+          <Key>
+            <PropertyRef Name="ShowID" />
+            <PropertyRef Name="NetworkID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Genre" />
+          </Key>
+          <Property Name="ShowID" Type="int" Nullable="false" />
+          <Property Name="NetworkID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Genre" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Rating" Type="decimal" Precision="2" Scale="1" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="250" />
+          <Property Name="Website" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TVNetworkShowsDB.dbo.vwRatingsAbove4' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwRatingsAbove4">
+          <Key>
+            <PropertyRef Name="ShowID" />
+            <PropertyRef Name="NetworkID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Genre" />
+          </Key>
+          <Property Name="ShowID" Type="int" Nullable="false" />
+          <Property Name="NetworkID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Genre" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Rating" Type="decimal" Precision="2" Scale="1" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="250" />
+          <Property Name="Website" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+        </EntityType>
+        <EntityContainer Name="TVNetworkShowsDBViewsStoreContainer">
+          <EntitySet Name="vwRatings4OrLess" EntityType="Self.vwRatings4OrLess" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwRatings4OrLess].[ShowID] AS [ShowID], 
+    [vwRatings4OrLess].[NetworkID] AS [NetworkID], 
+    [vwRatings4OrLess].[Title] AS [Title], 
+    [vwRatings4OrLess].[Genre] AS [Genre], 
+    [vwRatings4OrLess].[Rating] AS [Rating], 
+    [vwRatings4OrLess].[Photo] AS [Photo], 
+    [vwRatings4OrLess].[Website] AS [Website], 
+    [vwRatings4OrLess].[Description] AS [Description]
+    FROM [dbo].[vwRatings4OrLess] AS [vwRatings4OrLess]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwRatingsAbove4" EntityType="Self.vwRatingsAbove4" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwRatingsAbove4].[ShowID] AS [ShowID], 
+    [vwRatingsAbove4].[NetworkID] AS [NetworkID], 
+    [vwRatingsAbove4].[Title] AS [Title], 
+    [vwRatingsAbove4].[Genre] AS [Genre], 
+    [vwRatingsAbove4].[Rating] AS [Rating], 
+    [vwRatingsAbove4].[Photo] AS [Photo], 
+    [vwRatingsAbove4].[Website] AS [Website], 
+    [vwRatingsAbove4].[Description] AS [Description]
+    FROM [dbo].[vwRatingsAbove4] AS [vwRatingsAbove4]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TVNetworkShowsDBViews" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="vwRatings4OrLess">
+          <Key>
+            <PropertyRef Name="ShowID" />
+            <PropertyRef Name="NetworkID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Genre" />
+          </Key>
+          <Property Name="ShowID" Type="Int32" Nullable="false" />
+          <Property Name="NetworkID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Genre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rating" Type="Decimal" Precision="2" Scale="1" />
+          <Property Name="Photo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwRatingsAbove4">
+          <Key>
+            <PropertyRef Name="ShowID" />
+            <PropertyRef Name="NetworkID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Genre" />
+          </Key>
+          <Property Name="ShowID" Type="Int32" Nullable="false" />
+          <Property Name="NetworkID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Genre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rating" Type="Decimal" Precision="2" Scale="1" />
+          <Property Name="Photo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="TVNetworkShowsDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="vwRatings4OrLess" EntityType="Self.vwRatings4OrLess" />
+          <EntitySet Name="vwRatingsAbove4" EntityType="Self.vwRatingsAbove4" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TVNetworkShowsDBViewsStoreContainer" CdmEntityContainer="TVNetworkShowsDBEntities1">
+          <EntitySetMapping Name="vwRatings4OrLess">
+            <EntityTypeMapping TypeName="TVNetworkShowsDBViews.vwRatings4OrLess">
+              <MappingFragment StoreEntitySet="vwRatings4OrLess">
+                <ScalarProperty Name="ShowID" ColumnName="ShowID" />
+                <ScalarProperty Name="NetworkID" ColumnName="NetworkID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwRatingsAbove4">
+            <EntityTypeMapping TypeName="TVNetworkShowsDBViews.vwRatingsAbove4">
+              <MappingFragment StoreEntitySet="vwRatingsAbove4">
+                <ScalarProperty Name="ShowID" ColumnName="ShowID" />
+                <ScalarProperty Name="NetworkID" ColumnName="NetworkID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

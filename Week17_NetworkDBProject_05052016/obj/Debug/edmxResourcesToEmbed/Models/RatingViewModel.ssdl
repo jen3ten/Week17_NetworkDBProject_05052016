@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TVNetworkShowsDBViews.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TVNetworkShowsDB.dbo.vwRatings4OrLess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwRatings4OrLess">
+    <Key>
+      <PropertyRef Name="ShowID" />
+      <PropertyRef Name="NetworkID" />
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="Genre" />
+    </Key>
+    <Property Name="ShowID" Type="int" Nullable="false" />
+    <Property Name="NetworkID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Genre" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Rating" Type="decimal" Precision="2" Scale="1" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="250" />
+    <Property Name="Website" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TVNetworkShowsDB.dbo.vwRatingsAbove4' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwRatingsAbove4">
+    <Key>
+      <PropertyRef Name="ShowID" />
+      <PropertyRef Name="NetworkID" />
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="Genre" />
+    </Key>
+    <Property Name="ShowID" Type="int" Nullable="false" />
+    <Property Name="NetworkID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Genre" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Rating" Type="decimal" Precision="2" Scale="1" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="250" />
+    <Property Name="Website" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityContainer Name="TVNetworkShowsDBViewsStoreContainer">
+    <EntitySet Name="vwRatings4OrLess" EntityType="Self.vwRatings4OrLess" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwRatings4OrLess].[ShowID] AS [ShowID], 
+    [vwRatings4OrLess].[NetworkID] AS [NetworkID], 
+    [vwRatings4OrLess].[Title] AS [Title], 
+    [vwRatings4OrLess].[Genre] AS [Genre], 
+    [vwRatings4OrLess].[Rating] AS [Rating], 
+    [vwRatings4OrLess].[Photo] AS [Photo], 
+    [vwRatings4OrLess].[Website] AS [Website], 
+    [vwRatings4OrLess].[Description] AS [Description]
+    FROM [dbo].[vwRatings4OrLess] AS [vwRatings4OrLess]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwRatingsAbove4" EntityType="Self.vwRatingsAbove4" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwRatingsAbove4].[ShowID] AS [ShowID], 
+    [vwRatingsAbove4].[NetworkID] AS [NetworkID], 
+    [vwRatingsAbove4].[Title] AS [Title], 
+    [vwRatingsAbove4].[Genre] AS [Genre], 
+    [vwRatingsAbove4].[Rating] AS [Rating], 
+    [vwRatingsAbove4].[Photo] AS [Photo], 
+    [vwRatingsAbove4].[Website] AS [Website], 
+    [vwRatingsAbove4].[Description] AS [Description]
+    FROM [dbo].[vwRatingsAbove4] AS [vwRatingsAbove4]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

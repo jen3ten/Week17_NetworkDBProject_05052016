@@ -226,10 +226,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NetworkDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\RatingViewModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RatingViewModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RatingViewModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RatingViewModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RatingViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RatingViewModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Show.cs">
       <DependentUpon>NetworkDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Buddy Classes\ShowBuddy.cs" />
+    <Compile Include="Models\vwRatings4OrLess.cs">
+      <DependentUpon>RatingViewModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwRatingsAbove4.cs">
+      <DependentUpon>RatingViewModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Week17_NetworkDBProject_05052016Context.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -252,6 +273,16 @@
       <DependentUpon>NetworkDB.edmx</DependentUpon>
       <LastGenOutput>NetworkDB.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\RatingViewModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RatingViewModel.edmx</DependentUpon>
+      <LastGenOutput>RatingViewModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RatingViewModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RatingViewModel.edmx</DependentUpon>
+      <LastGenOutput>RatingViewModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -265,6 +296,13 @@
     </EntityDeploy>
     <Content Include="Models\NetworkDB.edmx.diagram">
       <DependentUpon>NetworkDB.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\RatingViewModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RatingViewModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RatingViewModel.edmx.diagram">
+      <DependentUpon>RatingViewModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

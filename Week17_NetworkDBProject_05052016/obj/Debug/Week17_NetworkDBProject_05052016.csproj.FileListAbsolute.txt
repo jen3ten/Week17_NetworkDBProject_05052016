@@ -79,4 +79,3 @@ C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\Week17_NetworkDBProje
 C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\Week17_NetworkDBProject_05052016\Week17_NetworkDBProject_05052016\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\Week17_NetworkDBProject_05052016\Week17_NetworkDBProject_05052016\obj\Debug\Week17_NetworkDBProject_05052016.dll
 C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\Week17_NetworkDBProject_05052016\Week17_NetworkDBProject_05052016\obj\Debug\Week17_NetworkDBProject_05052016.pdb
-C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\Week17_NetworkDBProject_05052016\Week17_NetworkDBProject_05052016\obj\Debug\Week17_NetworkDBProject_05052016.csprojResolveAssemblyReference.cache
