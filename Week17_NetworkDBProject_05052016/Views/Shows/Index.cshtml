@@ -5,7 +5,22 @@
 }
 
 <h2>List of Shows</h2>
-    
+
+
+<p>
+    @using (Html.BeginForm("Index", "Shows", FormMethod.Get))
+    {
+        <b>Show Me: </b>
+        @Html.RadioButton("filterBy", "allRatings", true) <text>All Shows</text>
+        @Html.RadioButton("filterBy", "highRatings") <text>Highly Rated Shows</text>
+        <input type="submit" value="Go!" />
+    }
+</p>
+
+<p>
+    @Html.ActionLink("Show Me Highly Rated Shows", "Index","vwRatingsAbove4")
+</p>
+   
 <!-- Users will not Add Shows
 <p>
     @Html.ActionLink("Create New", "Create")
