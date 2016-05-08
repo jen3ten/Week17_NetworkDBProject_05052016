@@ -202,6 +202,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NetworksController.cs" />
     <Compile Include="Controllers\ShowsController.cs" />
+    <Compile Include="Controllers\vwRatingsAbove4Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -360,6 +361,11 @@
     <Content Include="Views\Shows\Details.cshtml" />
     <Content Include="Views\Shows\Edit.cshtml" />
     <Content Include="Views\Shows\Index.cshtml" />
+    <Content Include="Views\vwRatingsAbove4\Create.cshtml" />
+    <Content Include="Views\vwRatingsAbove4\Delete.cshtml" />
+    <Content Include="Views\vwRatingsAbove4\Details.cshtml" />
+    <Content Include="Views\vwRatingsAbove4\Edit.cshtml" />
+    <Content Include="Views\vwRatingsAbove4\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

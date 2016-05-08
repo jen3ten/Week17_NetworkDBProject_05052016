@@ -10,118 +10,107 @@ using Week17_NetworkDBProject_05052016.Models;
 
 namespace Week17_NetworkDBProject_05052016.Controllers
 {
-    public class ShowsController : Controller
+    public class vwRatingsAbove4Controller : Controller
     {
-        private TVNetworkShowsDBEntities db = new TVNetworkShowsDBEntities();
+        private TVNetworkShowsDBEntities1 db = new TVNetworkShowsDBEntities1();
 
-        // GET: Shows
+        // GET: vwRatingsAbove4
         public ActionResult Index()
         {
-                var shows = db.Shows.Include(s => s.Network);
-                return View(shows.ToList());
+            return View(db.vwRatingsAbove4.ToList());
         }
 
-        /* WHere did this come from??
-        private ActionResult View(object p)
-        {
-            throw new NotImplementedException();
-        }*/
-
-        // GET: Shows/Details/5
+        // GET: vwRatingsAbove4/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Show show = db.Shows.Find(id);
-            if (show == null)
+            vwRatingsAbove4 vwRatingsAbove4 = db.vwRatingsAbove4.Find(id);
+            if (vwRatingsAbove4 == null)
             {
                 return HttpNotFound();
             }
-            return View(show);
+            return View(vwRatingsAbove4);
         }
 
-        // GET: Shows/Create
+        // GET: vwRatingsAbove4/Create
         public ActionResult Create()
         {
-            ViewBag.NetworkID = new SelectList(db.Networks, "NetworkID", "Name");
             return View();
         }
 
-        // POST: Shows/Create
+        // POST: vwRatingsAbove4/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ShowID,NetworkID,Title,Genre,Rating,Photo,Website,Description")] Show show)
+        public ActionResult Create([Bind(Include = "ShowID,NetworkID,Title,Genre,Rating,Photo,Website,Description")] vwRatingsAbove4 vwRatingsAbove4)
         {
             if (ModelState.IsValid)
             {
-                db.Shows.Add(show);
+                db.vwRatingsAbove4.Add(vwRatingsAbove4);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.NetworkID = new SelectList(db.Networks, "NetworkID", "Name", show.NetworkID);
-            return View(show);
+            return View(vwRatingsAbove4);
         }
 
-        // GET: Shows/Edit/5
+        // GET: vwRatingsAbove4/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Show show = db.Shows.Find(id);
-            if (show == null)
+            vwRatingsAbove4 vwRatingsAbove4 = db.vwRatingsAbove4.Find(id);
+            if (vwRatingsAbove4 == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.NetworkID = new SelectList(db.Networks, "NetworkID", "Name", show.NetworkID);
-            return View(show);
+            return View(vwRatingsAbove4);
         }
 
-        // POST: Shows/Edit/5
+        // POST: vwRatingsAbove4/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ShowID,NetworkID,Title,Genre,Rating,Photo,Website,Description")] Show show)
+        public ActionResult Edit([Bind(Include = "ShowID,NetworkID,Title,Genre,Rating,Photo,Website,Description")] vwRatingsAbove4 vwRatingsAbove4)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(show).State = EntityState.Modified;
+                db.Entry(vwRatingsAbove4).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.NetworkID = new SelectList(db.Networks, "NetworkID", "Name", show.NetworkID);
-            return View(show);
+            return View(vwRatingsAbove4);
         }
 
-        // GET: Shows/Delete/5
+        // GET: vwRatingsAbove4/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Show show = db.Shows.Find(id);
-            if (show == null)
+            vwRatingsAbove4 vwRatingsAbove4 = db.vwRatingsAbove4.Find(id);
+            if (vwRatingsAbove4 == null)
             {
                 return HttpNotFound();
             }
-            return View(show);
+            return View(vwRatingsAbove4);
         }
 
-        // POST: Shows/Delete/5
+        // POST: vwRatingsAbove4/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Show show = db.Shows.Find(id);
-            db.Shows.Remove(show);
+            vwRatingsAbove4 vwRatingsAbove4 = db.vwRatingsAbove4.Find(id);
+            db.vwRatingsAbove4.Remove(vwRatingsAbove4);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
