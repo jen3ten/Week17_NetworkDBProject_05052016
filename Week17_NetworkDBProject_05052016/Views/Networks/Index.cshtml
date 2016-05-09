@@ -5,7 +5,7 @@
 }
 
 <h2 class="page-title">TV Networks</h2>
-<p class="link-format">See below...</p>
+<p class="link-format">Select a network to see TV shows:</p>
 
 
     <!-- Users will not add Network data
@@ -20,18 +20,16 @@
     {
     <div>
         <div class="col-sm-6 col-md-4">
-            <a href="">
                 <div class="thumbnail">
                     <!--
                         <img src="@Html.DisplayFor(modelItem => item.Logo)" alt="Logo Photo" class="img-thumbnail">
                     -->
                     <input type="hidden" name="network" value=@item.NetworkID>
-                    <input type="image" src="@Html.DisplayFor(modelItem => item.Logo)" alt="Logo Photo" class="img-thumbnail"/>
+                    <input type="image" src="@Html.DisplayFor(modelItem => item.Logo)" alt="Logo Photo" class="thumbnail-network"/>
                     <div class="caption">
                         <b>@Html.DisplayFor(modelItem => item.Name)</b>
                     </div>
                 </div>
-            </a>
         </div>
     </div>
     }
