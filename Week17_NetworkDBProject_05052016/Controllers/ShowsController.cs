@@ -15,10 +15,17 @@ namespace Week17_NetworkDBProject_05052016.Controllers
         private TVNetworkShowsDBEntities db = new TVNetworkShowsDBEntities();
 
         // GET: Shows
-        public ActionResult Index()
+        public ActionResult Index(int? network)
         {
+            if (network >= 0)
+            {
+                return View(db.Shows.Where(x => x.NetworkID == network).ToList());
+            }
+            else
+            {
                 var shows = db.Shows.Include(s => s.Network);
                 return View(shows.ToList());
+            }
         }
 
         /* WHere did this come from??
