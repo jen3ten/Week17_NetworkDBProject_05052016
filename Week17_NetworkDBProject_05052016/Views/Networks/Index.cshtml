@@ -14,6 +14,22 @@
     </p>
     -->
 
+@foreach (var item in Model)
+{
+    <div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="@Html.DisplayFor(modelItem => item.Logo)" alt="Logo Photo" class="img-thumbnail">
+                <div class="caption">
+                    <b>@Html.DisplayFor(modelItem => item.Name)</b>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!--
+@*    
     <table class="table">
         <tr>
             <th>
@@ -45,3 +61,5 @@
         }
 
     </table>
+*@
+-->

@@ -57,14 +57,14 @@ textarea {
     font-family: 'Caveat', cursive;
     font-size:72px;
     color:yellow;
-    padding-left:50px;
+    //padding-left:50px;
+    text-align:center
 }
 
 .page-title{
     font-family: 'Caveat', cursive;
     font-size:60px;
     color:yellow;
-
 }
 
 .link-format{
@@ -79,4 +79,12 @@ textarea {
 
 .carousel-control{
     color:yellow;
+}
+
+.thumbnail{
+    margin:20px;
+}
+
+.caption {
+    text-align: center;
 }
