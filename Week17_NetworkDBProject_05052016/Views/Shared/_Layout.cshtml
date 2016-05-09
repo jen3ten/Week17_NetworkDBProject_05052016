@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Channel Surfer Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body class="home-background">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -17,12 +17,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Network TV Shows Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("CHANNEL SURFER Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav header-float-right">
-                    <li>@Html.ActionLink("NETWORKS", "Index", "Networks")</li>
-                    <li>@Html.ActionLink("SHOWS", "Index", "Shows")</li>
+                    <li>@Html.ActionLink("FIND A NETWORK", "Index", "Networks")</li>
+                    <li>@Html.ActionLink("FIND A TV SHOW", "Index", "Shows")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

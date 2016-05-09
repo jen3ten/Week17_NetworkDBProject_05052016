@@ -34,9 +34,49 @@ textarea {
 }
 
 .home-background{  /* sets the background image for the home page */
-    background:transparent url("http://prod.ninu.s3.amazonaws.com/encoded_files/303180-full_poster/frame_0000.jpg") no-repeat;
+    /*background:transparent url("http://prod.ninu.s3.amazonaws.com/encoded_files/303180-full_poster/frame_0000.jpg") no-repeat;
     height:600px;
     background-position:center;
     background-size:contain;
+    background-color:yellow;*/
+    background:transparent url("https://i.ytimg.com/vi/Oh-w6pN8gUo/maxresdefault.jpg");
 }
 
+.slide-position{
+    position:center;
+    padding-top:50px;
+    padding-left:250px;
+    padding-right:250px;
+}
+
+.slide-format{
+    height:400px;
+}
+
+.home-title{
+    font-family: 'Caveat', cursive;
+    font-size:72px;
+    color:yellow;
+    padding-left:50px;
+}
+
+.page-title{
+    font-family: 'Caveat', cursive;
+    font-size:60px;
+    color:yellow;
+
+}
+
+.link-format{
+    background-color:yellow;
+    font-size:16px;
+    padding-left:10px;
+}
+
+.table{
+    background-color:white;
+}
+
+.carousel-control{
+    color:yellow;
+}

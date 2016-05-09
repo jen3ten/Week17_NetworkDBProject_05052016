@@ -4,41 +4,44 @@
     ViewBag.Title = "Networks";
 }
 
-<h2>TV Networks</h2>
+<h2 class="page-title">TV Networks</h2>
+<p class="link-format">See below...</p>
 
-<!-- Users will not add Network data
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
--->
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Logo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th></th>
-    </tr>
+    <!-- Users will not add Network data
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    -->
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            <img src="@Html.DisplayFor(modelItem => item.Logo)" class="img-thumbnail" alt="Show Photo">
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <!-- Users will not Edit, Delete or view Details of Networks
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.NetworkID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.NetworkID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.NetworkID })
-        </td>
-        -->
-    </tr>
-}
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Logo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@Html.DisplayFor(modelItem => item.Logo)" class="img-thumbnail" alt="Show Photo">
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <!-- Users will not Edit, Delete or view Details of Networks
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.NetworkID }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.NetworkID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.NetworkID })
+                </td>
+                -->
+            </tr>
+        }
+
+    </table>
