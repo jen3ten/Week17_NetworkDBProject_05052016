@@ -4,9 +4,9 @@
     ViewBag.Title = "Shows";
 }
 
-<h2>List of Shows</h2>
+<h2>TV Shows</h2>
 
-
+<!--
 <p>
     @using (Html.BeginForm("Index", "Shows", FormMethod.Get))
     {
@@ -16,9 +16,10 @@
         <input type="submit" value="Go!" />
     }
 </p>
+-->
 
 <p>
-    @Html.ActionLink("Show Me Highly Rated Shows", "Index","vwRatingsAbove4")
+    @Html.ActionLink("Show Me Only Highly Rated Shows", "Index","vwRatingsAbove4")
 </p>
    
 <!-- Users will not Add Shows
@@ -50,7 +51,7 @@
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Network.Name)
+            Network
         </th>
         <th></th>
     </tr>
