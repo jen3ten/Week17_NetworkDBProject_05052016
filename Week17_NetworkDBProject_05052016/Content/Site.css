@@ -55,7 +55,15 @@ textarea {
 }
 
 .slide-format{
-    height:400px;
+    /*height:400px;
+    width:640px;*/
+}
+
+img{
+    /*width:640px;*/
+    max-height:280px;
+    /*position:absolute;*/
+    margin:0px auto 0px auto;
 }
 
 .home-title{
@@ -63,13 +71,19 @@ textarea {
     font-size:72px;
     color:yellow;
     /*padding-left:50px;*/
-    text-align:center
+    text-align:center;
+    /*background-color:#333333;*/
+    text-shadow:4px 4px 2px black;
+
 }
 
 .page-title{
     font-family: 'Caveat', cursive;
     font-size:60px;
     color:yellow;
+    /*background-color:#333333;*/
+    text-shadow:4px 4px 2px black;
+
 }
 
 .link-format{
@@ -96,4 +110,9 @@ textarea {
 
 footer{
     color:white;
+}
+
+.glyphicon-chevron-left, .glyphicon-chevron-right{
+    font-size:400%;
+    float:left;
 }

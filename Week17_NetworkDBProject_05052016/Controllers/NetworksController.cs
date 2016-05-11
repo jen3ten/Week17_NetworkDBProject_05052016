@@ -17,7 +17,8 @@ namespace Week17_NetworkDBProject_05052016.Controllers
         // GET: Networks
         public ActionResult Index()
         {
-            return View(db.Networks.ToList());
+            //return View(db.Networks.ToList());
+            return View(db.Networks.OrderBy(n => n.Name).ToList());
         }
 
         // GET: Networks/Details/5

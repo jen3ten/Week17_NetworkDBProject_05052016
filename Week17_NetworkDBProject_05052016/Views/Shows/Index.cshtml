@@ -20,7 +20,7 @@
 
 <p class="link-format">
     @Html.ActionLink("Show Me All Shows", "Index", "Shows") | 
-    @Html.ActionLink("Show Me Highly Rated Shows", "Index","vwRatingsAbove4")
+    @Html.ActionLink("Show Me Highly Rated Shows", "Index", "vwRatingsAbove4")
 </p>
    
 <!-- Users will not Add Shows
@@ -32,13 +32,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            @*@Html.DisplayNameFor(model => model.Title)*@
+            @Html.ActionLink("Title", "Index", "Shows", new { id = 0, sortBy = "Title" }, null)
+
+
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Genre)
+            @*@Html.DisplayNameFor(model => model.Genre)*@
+            @Html.ActionLink("Genre", "Index", "Shows", new { id = 0, sortBy = "Genre" }, null)
+
+
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Rating)
+            @*@Html.DisplayNameFor(model => model.Rating)*@
+            @Html.ActionLink("Rating", "Index", "Shows", new { id = 0, sortBy = "Rating" }, null)
+
+
         </th>
         <!--
         <th>
@@ -52,7 +61,10 @@
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
-            Network
+            @*Network*@
+            @Html.ActionLink("Network", "Index", "Shows", new { id = 0, sortBy = "Network" }, null)
+
+
         </th>
         <th></th>
     </tr>

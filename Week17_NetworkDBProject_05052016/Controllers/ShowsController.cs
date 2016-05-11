@@ -15,18 +15,44 @@ namespace Week17_NetworkDBProject_05052016.Controllers
         private TVNetworkShowsDBEntities db = new TVNetworkShowsDBEntities();
 
         // GET: Shows
-        public ActionResult Index(int? network)
+        public ActionResult Index(int? network, string sortBy)
         {
-            if (network >= 0)
+            if (network == 0)
             {
-                return View(db.Shows.Where(x => x.NetworkID == network).ToList());
+                //return View(db.Shows.OrderBy(x => x.Title).Where(x => x.NetworkID == network).ToList());
+                var shows = db.Shows.Include(s => s.Network);
+                return View(shows.OrderBy(x => x.Title).ToList());
+
+            }
+            else if (network >= 1)
+            {
+                return View(db.Shows.OrderBy(x => x.Title).Where(x => x.NetworkID == network).ToList());
             }
             else
             {
                 var shows = db.Shows.Include(s => s.Network);
-                return View(shows.ToList());
+                switch (sortBy)
+                {
+                    case "Title":
+                        return View(shows.OrderBy(x => x.Title).ToList());
+                    case "Genre":
+                        return View(shows.OrderBy(x => x.Genre).ToList());
+                    case "Rating":
+                        return View(shows.OrderBy(x => x.Rating).ToList());
+                    case "Network":
+                        return View(shows.OrderBy(x => x.Network.Name).ToList());
+                    default:
+                        return View(shows.OrderBy(x => x.Title).ToList());
+                }
             }
         }
+
+        public ActionResult Sort(string sortBy)
+        {
+                var shows = db.Shows.Include(s => s.Network);
+                return View(shows.OrderBy(x => x.Title).ToList());
+        }
+
 
         /* WHere did this come from??
         private ActionResult View(object p)

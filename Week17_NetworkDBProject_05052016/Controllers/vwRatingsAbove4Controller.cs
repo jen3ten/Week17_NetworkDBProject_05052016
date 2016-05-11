@@ -17,7 +17,7 @@ namespace Week17_NetworkDBProject_05052016.Controllers
         // GET: vwRatingsAbove4
         public ActionResult Index()
         {
-            return View(db.vwRatingsAbove4.ToList());
+            return View(db.vwRatingsAbove4.OrderBy(x => x.Title).ToList());
         }
 
         // GET: vwRatingsAbove4/Details/5
