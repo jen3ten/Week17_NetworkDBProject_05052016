@@ -7,6 +7,10 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet' type='text/css'>
+
+    <!--Go to http://fontawesome.io/icons/ for list of available font-awesome icons-->
+    <link rel="stylesheet" href="~/fonts/font-awesome-4.6.2/css/font-awesome.min.css" type="text/css">
+
 </head>
 <body class="home-background">
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -23,6 +27,16 @@
                 <ul class="nav navbar-nav header-float-right">
                     <li>@Html.ActionLink("SURF NETWORKS", "Index", "Networks")</li>
                     <li>@Html.ActionLink("SURF TV SHOWS", "Index", "Shows")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            SURF BY GENRE
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Comedy", "Filter", "Shows", new { filterBy = "Comedy", network = 0 }, null)</li>
+                            <li>@Html.ActionLink("Drama", "Filter", "Shows", new { filterBy = "Drama", network = 0 }, null)</li>
+                        </ul>
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

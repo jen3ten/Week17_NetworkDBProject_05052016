@@ -6,6 +6,19 @@
 
 <h2 class="page-title">TV Shows</h2>
 
+@* Just testing out the new Font-Awesome fonts
+<h2 class="page-title fa fa-camera-retro fa-2x"></h2>
+*@
+
+<p class="link-format">
+    @using (Html.BeginForm("Filter", "Shows", FormMethod.Get))
+    {
+        @*Filter by: @Html.DropDownListFor(,)*@
+        @Html.TextBox("filterBy") <input type="submit" value="Search Show Titles" />
+
+    }
+</p>
+
 <!--
 <p>
     @using (Html.BeginForm("Index", "Shows", FormMethod.Get))
@@ -18,10 +31,13 @@
 </p>
 -->
 
+@* All shows will be displayed; changing the mechanism to filter by rating
 <p class="link-format">
     @Html.ActionLink("Show Me All Shows", "Index", "Shows") | 
     @Html.ActionLink("Show Me Highly Rated Shows", "Index", "vwRatingsAbove4")
-</p>
+</p>*@
+
+<p class="link-format">Sort TV Shows by Column Heading</p>
    
 <!-- Users will not Add Shows
 <p>

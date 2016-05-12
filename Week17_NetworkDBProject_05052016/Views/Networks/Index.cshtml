@@ -5,7 +5,7 @@
 }
 
 <h2 class="page-title">TV Networks</h2>
-<p class="link-format">Select a network to see TV shows:</p>
+<p class="link-format">Select a Network to See Its TV Shows</p>
 
 
     <!-- Users will not add Network data
@@ -28,16 +28,21 @@
                     @*<input type="hidden" name="network" value=@item.NetworkID>
                     <input type="image" src="@Html.DisplayFor(modelItem => item.Logo)" alt="Logo Photo" class="thumbnail-network"/>*@
                     
-                    <a href="@Url.Action("Index", "Shows", new { network = item.NetworkID, sortBy = ""}, null)">
+                    @* this code worked, testing send code to "Filter" action instead
+                        <a href="@Url.Action("Index", "Shows", new { network = item.NetworkID, sortBy = ""}, null)">
                         <img src="@Html.DisplayFor(modelItem => item.Logo)" alt="Network Logo Image" class="thumbnail-network" />
-                    </a>
+                    </a>*@
 
-                    @*@Html.ActionLink("Image here", "Index", "Shows", new { network = item.NetworkID}, null)*@
+                    <a href="@Url.Action("Filter", "Shows", new { filterBy = "Network", network = item.NetworkID}, null)">
+                        <img src="@Html.DisplayFor(modelItem => item.Logo)" alt="Network Logo Image" class="thumbnail-network" />
 
-                    <div class="caption">
-                        <b>@Html.DisplayFor(modelItem => item.Name)</b>
-                    </div>
-                </div>
+
+                        @*@Html.ActionLink("Image here", "Index", "Shows", new { network = item.NetworkID}, null)*@
+
+                        <div class="caption">
+                            <b>@Html.DisplayFor(modelItem => item.Name)</b>
+                        </div>
+</div>
         </div>
     </div>
     }

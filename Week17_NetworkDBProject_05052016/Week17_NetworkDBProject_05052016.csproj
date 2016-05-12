@@ -368,6 +368,8 @@
     <Content Include="Views\vwRatingsAbove4\Edit.cshtml" />
     <Content Include="Views\vwRatingsAbove4\Index.cshtml" />
     <Content Include="Views\Shows\Sort.cshtml" />
+    <Content Include="Views\Shows\Filter.cshtml" />
+    <Content Include="Views\Shows\GenreIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

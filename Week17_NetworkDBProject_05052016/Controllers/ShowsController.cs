@@ -47,11 +47,44 @@ namespace Week17_NetworkDBProject_05052016.Controllers
             }
         }
 
-        public ActionResult Sort(string sortBy)
+        public ActionResult Filter(string filterBy, int? network)
         {
-                var shows = db.Shows.Include(s => s.Network);
-                return View(shows.OrderBy(x => x.Title).ToList());
+            ViewBag.Message = filterBy;
+            switch(filterBy)
+            {
+                case "Network":
+                    return View(db.Shows.OrderBy(x => x.Title).Where(x => x.NetworkID == network).ToList());
+                    break;
+                //case "Genre":
+                //    return View();
+                //    break;
+                //case "Rating":
+                //    return View();
+                //    break;
+                case "Comedy":
+                    return View(db.Shows.OrderBy(x => x.Title).Where(x => x.Genre == "Comedy").ToList());
+                    break;
+                case "Drama":
+                    return View(db.Shows.OrderBy(x => x.Title).Where(x => x.Genre == "Drama").ToList());
+                    break;
+                default:
+                    return View(db.Shows.OrderBy(x => x.Title).Where(x => x.Title.Contains(filterBy)).ToList());
+                    break;
+            }
         }
+
+        // I did not use this
+        //public ActionResult GenreIndex ()
+        //{
+        //    return View(db.Shows.OrderBy(n => n.Genre).ToList());
+        //}
+
+        // I did not use this
+        //public ActionResult Sort(string sortBy)
+        //{
+        //    var shows = db.Shows.Include(s => s.Network);
+        //    return View(shows.OrderBy(x => x.Title).ToList());
+        //}
 
 
         /* WHere did this come from??

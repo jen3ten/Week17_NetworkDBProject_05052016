@@ -1,0 +1,30 @@
+﻿@* I didn't use any of this
+    
+@model IEnumerable<Week17_NetworkDBProject_05052016.Models.Show>
+
+@{
+    ViewBag.Title = "Genre Index";
+}
+
+<h2 class="page-title">TV Genres</h2>
+<p class="link-format">Select a Genre to see the TV Shows</p>
+
+List<string> showGenreList = new List<string> { db.Shows.Genre};
+
+@foreach (var genre in showGenreList)
+{
+    {
+        <div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    @*<a href="@Url.Action("Filter", "Shows", new { filterBy = "Genre", network = 0}, null)">*@
+                        @Html.DisplayFor(modelItem => item.Genre)
+
+                        <div class="caption">
+                            <b>@Html.DisplayFor(modelItem => item.Genre)</b>
+                        </div>
+                </div>
+            </div>
+        </div>
+    }
+}*@
